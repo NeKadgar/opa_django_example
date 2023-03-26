@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "opa-django-example"
+version = "0.1.0"
+description = ""
+authors = ["Maxim Sheleh"]
+readme = "README.md"
+packages = [{include = "opa_django_example"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Django = "^4.1.7"
+djangorestframework = "^3.14.0"
+djangorestframework-simplejwt = "^5.2.2"
+requests = "^2.28.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
