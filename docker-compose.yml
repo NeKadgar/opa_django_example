@@ -1,24 +1,10 @@
 version: '3.1'
 
 services:
-  postgres:
-    image: postgres
-    environment:
-      - POSTGRES_DB=postgres
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-    ports:
-      - 5432:5432
   opa:
     image: openpolicyagent/opa:latest
-    volumes:
-      - ./policy.rego:/config/policy.rego
-    command:
-      - "run"
-      - "--log-level=debug"
-      - "--log-format=json-pretty"
-      - "--server"
-      - "--set=decision_logs.console=true"
-      - "/config/policy.rego"
     ports:
       - 8181:8181
+    volumes:
+      - ./policies:/policies
+    command: "run --server --log-level debug --log-format=json-pretty /policies"
