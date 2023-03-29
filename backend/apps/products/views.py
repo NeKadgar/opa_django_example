@@ -2,7 +2,6 @@ from django.db.models import Q
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from apps.products.models import Book
-from apps.users.models import User
 from apps.products.serializers import BookSerializer
 from utils.opa import opa_authorization
 
