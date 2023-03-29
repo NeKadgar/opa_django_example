@@ -10,7 +10,7 @@ class Footwear(AbstractCompanyModel):
     price = models.DecimalField(max_digits=6, decimal_places=2)
 
 
-class Book(AbstractCompanyModel):
+class Book(AbstractCompanyModel, models.Model):
     name = models.CharField(max_length=255)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     description = models.TextField()
